@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #161716;
+}
+ 
+ul {
+  position: relative;
+  display: flex;
+  gap: 30px;
+}
+
+ul li {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 60px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
+}
+
+ul li:hover {
+  width: 180px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
+}
+
+ul li::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 60px;
+  background: linear-gradient(45deg, var(--i), var(--j));
+  opacity: 0;
+  transition: 0.5s;
+}
+
+ul li:hover::before {
+  opacity: 1;
+}
+
+ul li::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 60px;
+  background: linear-gradient(45deg, var(--i), var(--j));
+  transition: 0.5s;
+  filter: blur(12px);
+  z-index: -1;
+  opacity: 0;
+}
+
+ul :hover::after {
+  opacity: 0.5;
+}
+
+ul li ion-icon {
+  color: grey;
+  font-size: 1.80em;
+  transition: 0.5s;
+  transition-delay: 0.25s;
+}
+
+ul li:hover ion-icon {
+  transform: scale(0);
+  transition-delay: 0s;
+}
+
+ul li span {
+  position: absolute;
+}
+
+ul li .主題 {
+  color: #191c1a;
+  font-size: 1.30em;
+  text-transform: uppercase;
+  transform: scale(0);
+  transition: 0.5s;
+  transition-delay: 0s;
+}
+
+ul li:hover .主題 {
+  transform: scale(1);
+  transition-delay: 0.25s;
+}
